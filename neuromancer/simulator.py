@@ -1,7 +1,7 @@
 """
-Classes for construction of open-loop and closed-loop Simulators.
-    + SystemSimulator: aggregator class creating directed (possibly cyclic) computational graph
-    + SystemComponent: base abstract class for simulation components
+Classes for construction of open-loop and closed-loop Simulators:
+#.  SystemSimulator: aggregator class creating directed (possibly cyclic) computational graph
+#.  SystemComponent: base abstract class for simulation components
 """
 
 from typing import Dict, List
@@ -17,16 +17,16 @@ import matplotlib.pyplot as plt
 
 
 class SystemComponent(ABC):
-    DEFAULT_INPUT_KEYS: List[str]
-    OPTIONAL_INPUT_KEYS: List[str]
-    DEFAULT_OUTPUT_KEYS: List[str]
-
     """
     Base abstract class representing component of the Simulator system.
     The behavior of each component is defined in the _forward_step() method.
     Each component has atributes .input_keys and .output_keys given as list of strings
     that define input and ouptut variables of the component, respectively.
     """
+
+    DEFAULT_INPUT_KEYS: List[str]
+    OPTIONAL_INPUT_KEYS: List[str]
+    DEFAULT_OUTPUT_KEYS: List[str]
 
     def __init__(self, name=None):
         """
@@ -359,7 +359,7 @@ class DynamicsNeuromancer(SystemDynamics):
     """
     Wrapper for Neuromancer state space model (SSM) classes defined in neuromancer.dynamics.py
     For complete documentaton of Neuromancer's SSM classes see:
-        https://pnnl.github.io/neuromancer/dynamics.html
+    https://pnnl.github.io/neuromancer/dynamics.html
     """
 
     def __init__(self, model, input_key_map={}, name=None):
@@ -454,20 +454,21 @@ class MovingHorizon(SystemComponent):
 
 
 class SystemEstimator(SystemComponent):
-    DEFAULT_INPUT_KEYS = []
-    OPTIONAL_INPUT_KEYS = []
-    DEFAULT_OUTPUT_KEYS = ["x"]
     """
     SystemEstimator is a class that wraps state estimator callables.
     Estimators compute state variable estimates based on measurement data 
     given by variables defined in the input_keys.
     Estimator is defined as:
-        x = estimator(m)
+    x = estimator(m)
     where:
-        estimator - state estimator callable
-        x - estimated state variable
-        m - measurement variables defined via input_keys
+    estimator - state estimator callable
+    x - estimated state variable
+    m - measurement variables defined via input_keys
     """
+
+    DEFAULT_INPUT_KEYS = []
+    OPTIONAL_INPUT_KEYS = []
+    DEFAULT_OUTPUT_KEYS = ["x"]
 
     def __init__(self, estimator, input_keys=[], name=None):
         """
@@ -580,19 +581,20 @@ class EstimatorPytorch(SystemEstimator):
 
 
 class SystemController(SystemComponent):
-    DEFAULT_INPUT_KEYS = []
-    OPTIONAL_INPUT_KEYS = []
-    DEFAULT_OUTPUT_KEYS = ["u"]
     """
     Base control policy class mapping feature variables defined via input_keys
     onto control action variables u.
     Control policy is given as:
-        u = policy(features)
+    u = policy(features)
     where:
-        policy - control policy callable
-        u - control action variables
-        features - feature variables defined via input_keys
+    policy - control policy callable
+    u - control action variables
+    features - feature variables defined via input_keys
     """
+
+    DEFAULT_INPUT_KEYS = []
+    OPTIONAL_INPUT_KEYS = []
+    DEFAULT_OUTPUT_KEYS = ["u"]
 
     def __init__(self, policy, input_keys=[], name=None):
         """
@@ -715,14 +717,15 @@ class ControllerPytorch(SystemController):
 
 
 class SystemConstraints(SystemComponent):
-    DEFAULT_INPUT_KEYS = []
-    OPTIONAL_INPUT_KEYS = []
-    DEFAULT_OUTPUT_KEYS = []
     """
     Weapper class to evaluate Neuromancer constraints in the SystemSimulator.
     For a complete documentation of Neuromancer's constraints see:
-        https://pnnl.github.io/neuromancer/constraint.html      
+    https://pnnl.github.io/neuromancer/constraint.html      
     """
+
+    DEFAULT_INPUT_KEYS = []
+    OPTIONAL_INPUT_KEYS = []
+    DEFAULT_OUTPUT_KEYS = []
 
     def __init__(self, constraints, name=None):
         """

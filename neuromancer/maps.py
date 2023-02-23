@@ -8,13 +8,11 @@ class Map(Component):
     Map is a component that maps aggregated inputs in input_keys into single variable and maps it via single map (nn.Module) to one or more output keys depending on the number of output keys.
 
     It can model following relations via single map:
-        one to one - if there is single input key and single output key
-            https://en.wikipedia.org/wiki/One-to-one_(data_model)
-        one to many - if there is single input key and many output keys
-            https://en.wikipedia.org/wiki/One-to-many_(data_model)
-        many to one - if there are many input keys and single output key
-        many to many - if there are many input keys and many output keys
-            https://en.wikipedia.org/wiki/Many-to-many_(data_model)
+
+    #. `one to one <https://en.wikipedia.org/wiki/One-to-one_(data_model)>`_ - if there is single input key and single output key
+    #. `one to many <https://en.wikipedia.org/wiki/One-to-many_(data_model)>`_ - if there is single input key and many output keys 
+    #. `many to many <https://en.wikipedia.org/wiki/Many-to-many_(data_model)>`_ - if there are many input keys and many output keys
+    #. many to one - if there are many input keys and single output key
     """
     def __init__(
         self,
@@ -53,13 +51,11 @@ class ManyToMany(Map):
     to one or more output keys depending on the number of output keys.
 
     It can model following relations via multiple maps:
-        one to one - if there is single input key and single output key, maps via single map
-            https://en.wikipedia.org/wiki/One-to-one_(data_model)
-        one to many - if there is single input key and many output keys, maps via that many maps as output keys
-            https://en.wikipedia.org/wiki/One-to-many_(data_model)
-        many to many - if there are many input keys and many output keys, maps via that many maps as output keys
-            https://en.wikipedia.org/wiki/Many-to-many_(data_model)
-        many to one - if there are many input keys and single output key, maps via single map
+
+    #. one to one - if there is single input key and single output key, maps via single map https://en.wikipedia.org/wiki/One-to-one_(data_model)
+    #. one to many - if there is single input key and many output keys, maps via that many maps as output keys https://en.wikipedia.org/wiki/One-to-many_(data_model)
+    #. many to many - if there are many input keys and many output keys, maps via that many maps as output keys https://en.wikipedia.org/wiki/Many-to-many_(data_model)
+    #. many to one - if there are many input keys and single output key, maps via single map
     """
     def __init__(
         self,
@@ -97,8 +93,7 @@ class ManyToMany(Map):
 class OneToOne(ManyToMany):
     """
     OneToOne is a component that maps each input in input_keys exactly to one output in output_keys
-    via list of maps (List[nn.Module]) with the same length as input_keys and output_keys
-        https://en.wikipedia.org/wiki/One-to-one_(data_model)
+    via list of maps (List[nn.Module]) with the same length as input_keys and output_keys https://en.wikipedia.org/wiki/One-to-one_(data_model)
     """
     def __init__(
         self,
@@ -129,8 +124,8 @@ class Map2Dto3D(Map):
     """
     Map reshaping 2D tensor returned by callable func to 3D tensor based on dimensions given in
     dim1 and dim2.
-        2D tensor: [batch, state_dim]
-        3D tensor: [-1, dim1, dim2]
+    * 2D tensor: [batch, state_dim]
+    * 3D tensor: [-1, dim1, dim2]
     """
     def __init__(
         self,
