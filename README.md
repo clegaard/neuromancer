@@ -1,8 +1,16 @@
 # NeuroMANCER v1.3.1 
+
+[![Python package](https://github.com/clegaard/neuromancer/actions/workflows/test.yml/badge.svg)](https://github.com/clegaard/neuromancer/actions/workflows/test.yml)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/neuromancer)](
+https://pypi.org/project/neuromancer/)
+
+
 Neural Modules with Adaptive Nonlinear Constraints and Efficient Regularizations.
 
 Authors: Aaron Tuor, Jan Drgona, Mia Skomski, Stefan Dernbach, James Koch, Zhao Chen,
 Christian Møldrup Legaard, Draguna Vrabie, Madelyn Shapiro
+
+
 
 ## Version 1.3.1 release notes
 + New example scripts and notebooks
