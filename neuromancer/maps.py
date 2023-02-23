@@ -5,8 +5,7 @@ import torch
 
 class Map(Component):
     """
-    Map is a component that maps aggregated inputs in input_keys into single variable
-    and maps it via single map (nn.Module) to one or more output keys depending on the number of output keys.
+    Map is a component that maps aggregated inputs in input_keys into single variable and maps it via single map (nn.Module) to one or more output keys depending on the number of output keys.
 
     It can model following relations via single map:
         one to one - if there is single input key and single output key

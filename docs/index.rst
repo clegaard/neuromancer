@@ -251,7 +251,7 @@ Publications
 Cite as
 -------
 
-.. code:: yaml
+.. code:: bib
 
    @article{Neuromancer2022,
      title={{NeuroMANCER: Neural Modules with Adaptive Nonlinear Constraints and Efficient Regularizations}},
@@ -306,6 +306,9 @@ Documentation
    solvers.rst
    simulator.rst
    physics.rst
+
+   psl/index.rst
+   slim/index.rst
 
 
 

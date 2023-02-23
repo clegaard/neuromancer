@@ -81,7 +81,6 @@ Dynamics:
    :maxdepth: 2
    :caption: Docs:
 
-   includeme
    linear.rst
    rnn.rst
    benchmarks.rst

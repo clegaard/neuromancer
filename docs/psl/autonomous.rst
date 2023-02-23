@@ -1,7 +1,7 @@
 Autonomous
 ==================
 
-.. automodule:: autonomous
+.. automodule:: psl.autonomous
    :members:
    :undoc-members:
    :special-members: __call__
