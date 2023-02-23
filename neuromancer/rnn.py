@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import slim
+import neuromancer.slim as slim
 
 
 class RNNCell(nn.Module):

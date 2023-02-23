@@ -13,7 +13,7 @@ import torch
 import torch.nn as nn
 
 # ecosystem imports
-import slim
+import neuromancer.slim as slim
 
 # local imports
 import neuromancer.blocks as blocks

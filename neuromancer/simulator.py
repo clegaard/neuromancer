@@ -767,7 +767,7 @@ class SystemConstraints(SystemComponent):
 
 if __name__ == "__main__":
     from neuromancer import dynamics, estimators, integrators, blocks
-    from psl import systems
+    from neuromancer.psl import systems
 
     """
     Test SystemLinSSM class
@@ -1046,7 +1046,7 @@ if __name__ == "__main__":
     """
     print('\ntest SystemSimulator class: '
           'SystemPSL + SystemNeuromancer (NonAutonomous) \n')
-    import slim
+    import neuromancer.slim as slim
     from neuromancer import ode
 
     # PSL model

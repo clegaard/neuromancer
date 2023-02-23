@@ -26,8 +26,8 @@ More detailed description of options in the `get_base_parser()` function in comm
 """
 
 import torch
-import slim
-import psl
+import neuromancer.slim as slim
+import neuromancer.psl as psl
 import numpy as np
 import matplotlib.pyplot as plt
 

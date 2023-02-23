@@ -8,7 +8,7 @@ Currently we support three types of datasets: static, sequence, and multi-sequen
 
 
 from neuromancer import dataset
-import psl
+import neuromancer.psl as psl
 import torch
 import numpy as np
 

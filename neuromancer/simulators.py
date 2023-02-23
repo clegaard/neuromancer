@@ -5,7 +5,7 @@
 import torch
 import torch.nn as nn
 
-from psl.emulator import EmulatorBase
+from neuromancer.psl.emulator import EmulatorBase
 
 from neuromancer.problem import Problem
 from neuromancer.trainer import move_batch_to_device

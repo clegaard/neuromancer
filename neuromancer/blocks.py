@@ -6,7 +6,7 @@ Neural network module building blocks for neural state space models, state estim
 import numpy as np
 import torch
 import torch.nn as nn
-import slim
+import neuromancer.slim as slim
 
 import neuromancer.rnn as rnn
 from neuromancer.activations import SoftExponential, SmoothedReLU
@@ -31,7 +31,7 @@ class Linear(nn.Module):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Not used in this module but included as argument for consistent interface
         :param hsizes: (list of ints) Not used in this module but included as argument for consistent interface
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -102,7 +102,7 @@ class MLP(nn.Module):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -169,7 +169,7 @@ class MLP_bounds(MLP):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -223,7 +223,7 @@ class InteractionEmbeddingMLP(nn.Module):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -282,7 +282,7 @@ class MLPDropout(nn.Module):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -338,7 +338,7 @@ class ResMLP(MLP):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -492,7 +492,7 @@ class PytorchRNN(nn.Module):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer
@@ -540,7 +540,7 @@ class RNN(nn.Module):
         :param insize: (int) dimensionality of input
         :param outsize: (int) dimensionality of output
         :param bias: (bool) Whether to use bias
-        :param linear_map: (class) Linear map class from slim.linear
+        :param linear_map: (class) Linear map class from neuromancer.slim.linear
         :param nonlin: (callable) Elementwise nonlinearity which takes as input torch.Tensor and outputs torch.Tensor of same shape
         :param hsizes: (list of ints) List of hidden layer sizes
         :param linargs: (dict) Arguments for instantiating linear layer

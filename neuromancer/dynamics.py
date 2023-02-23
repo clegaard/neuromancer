@@ -42,7 +42,7 @@ Block components:
 import torch
 import torch.nn as nn
 from typing import List
-import slim
+import neuromancer.slim as slim
 from neuromancer.component import Component
 from neuromancer import gnn
 from neuromancer.blocks import MLP

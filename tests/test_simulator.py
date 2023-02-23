@@ -1,12 +1,12 @@
 from hypothesis import given, settings, strategies as st
 import torch
 import torch.nn as nn
-import slim
+import neuromancer.slim as slim
 import numpy as np
 from neuromancer import dynamics, estimators, integrators, blocks
 from neuromancer.constraint import variable
 import neuromancer.simulator as sim
-import psl
+import neuromancer.psl as psl
 psl_nonauto_systems = [psl.nonautonomous.systems['TwoTank'],
                        psl.nonautonomous.systems['CSTR'],
                        psl.nonautonomous.systems['HindmarshRose'],

@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from torch import nn
 
-import slim
+import neuromancer.slim as slim
 from neuromancer import blocks
 
 
