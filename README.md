@@ -1,8 +1,9 @@
 # NeuroMANCER v1.3.1 
 
-[![Python package](https://github.com/clegaard/neuromancer/actions/workflows/test.yml/badge.svg)](https://github.com/clegaard/neuromancer/actions/workflows/test.yml)
+[![Tests](https://github.com/clegaard/neuromancer/actions/workflows/test.yml/badge.svg)](https://github.com/clegaard/neuromancer/actions/workflows/test.yml)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/neuromancer)](
 https://pypi.org/project/neuromancer/)
+[![Documentation](https://github.com/clegaard/neuromancer/actions/workflows/docs.yml/badge.svg)](https://github.com/clegaard/neuromancer/actions/workflows/docs.yml)
 
 
 Neural Modules with Adaptive Nonlinear Constraints and Efficient Regularizations.
