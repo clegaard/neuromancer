@@ -19,8 +19,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
+      - name: upgrade pip
+        run: python3 -m pip install --upgrade pip
       - name: Install neuromancer
-        run: python3 -m pip install ."[tests,examples,docs]"
+        run: python3 -m pip install ".[tests,examples,docs]"
       - name: Build with Sphinx
         run: cd docs/ && make html
       - name: Upload artifact
