@@ -56,7 +56,7 @@ dependencies = [
     "torchdiffeq",
 ]
 
-dynamic = ["version"]
+version = "1.3.2"
 
 [project.urls]
 homepage = "https://pnnl.github.io/neuromancer/"
@@ -71,9 +71,6 @@ zip-safe = false
 tests = ["pytest", "hypothesis"]
 examples = ["casadi", "cvxpy", "imageio"]
 docs = ["sphinx", "sphinx-rtd-theme"]
-
-[tool.setuptools.dynamic]
-version = { attr = "neuromancer.__version__" }
 
 [tool.setuptools.package-data]
 psl = ["neuromancer/psl/parameters/buildings/*"]
