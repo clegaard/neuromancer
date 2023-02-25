@@ -5,8 +5,17 @@ import neuromancer.psl.coupled_systems as cs
 import neuromancer.psl.emulator as emulator
 import neuromancer.psl.plot as plot
 from neuromancer.psl.perturb import *
-
+import toml
 import os
+
+try:
+    with open("pyproject.toml") as f:
+        _pyproject = toml.load(f)
+
+    repo = _pyproject["project"]["urls"]["repository"]
+    'https://github.com/clegaard/neuromancer/'
+except Exception as e:
+    raise RuntimeError("Unable to extract the project.urls.repository from `pyproject.toml`") from e
 
 resource_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 

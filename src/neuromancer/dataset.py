@@ -64,6 +64,9 @@ SUPPORTED_EXTENSIONS = {".csv", ".mat"}
 
 
 def read_file(file_or_dir):
+
+    raise NotImplementedError("Fetch from Git LFS storage")
+
     if os.path.isdir(file_or_dir):
         files = [
             os.path.join(file_or_dir, x)
@@ -80,6 +83,8 @@ def _read_file(file_path):
 
     :param file_path: (str) path to a MAT or CSV file to load.
     """
+    
+
     file_type = file_path.split(".")[-1].lower()
     if file_type == "mat":
         f = loadmat(file_path)

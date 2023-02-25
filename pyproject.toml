@@ -32,8 +32,8 @@ keywords = [
 
 license = { text = "BSD-2-Clause" }
 classifiers = [
-    "Programming Language :: Python :: 3:9",
-    "Programming Language :: Python :: 3:10",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Scientific/Engineering :: Physics",
     "License :: OSI Approved :: BSD License"
@@ -54,23 +54,23 @@ dependencies = [
     "scipy",
     "torch",
     "torchdiffeq",
+    "toml"
 ]
 
 version = "1.3.2"
 
 [project.urls]
-homepage = "https://pnnl.github.io/neuromancer/"
-documentation = "https://pnnl.github.io/neuromancer/"
-repository = "https://pnnl.github.io/neuromancer/"
+homepage = "https://github.com/clegaard/neuromancer/"
+documentation = "https://christianlegaard.com/neuromancer/"
+repository = "https://github.com/clegaard/neuromancer/"
 
 [tool.setuptools]
-packages = ["neuromancer"]
-zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [project.optional-dependencies]
 tests = ["pytest", "hypothesis"]
 examples = ["casadi", "cvxpy", "imageio"]
 docs = ["sphinx", "sphinx-rtd-theme"]
-
-[tool.setuptools.package-data]
-psl = ["neuromancer/psl/parameters/buildings/*"]
