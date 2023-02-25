@@ -18,7 +18,7 @@ authors = [
     { name = "Madelyn Shapiro", email = "madelyn.shapiro@pnnl.gov"}
 ]
 description = "Neural Modules with Adaptive Nonlinear Constraints and Efficient Regularization"
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.9, <3.11"
 keywords = [
     "Deep Learning",
@@ -65,7 +65,7 @@ documentation = "https://christianlegaard.com/neuromancer/"
 repository = "https://github.com/clegaard/neuromancer/"
 
 [tool.setuptools]
-include-package-data = true
+include-package-data = false
 
 [tool.setuptools.packages.find]
 where = ["src"]
