@@ -65,7 +65,7 @@ documentation = "https://christianlegaard.com/neuromancer/"
 repository = "https://github.com/clegaard/neuromancer/"
 
 [tool.setuptools]
-include-package-data = false
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
